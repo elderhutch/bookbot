@@ -32,6 +32,7 @@ def character_count(text):
 def sort_list(dict):
     return dict[""]
 
+# In retrospect, this actually just filters out non alphabet characters.  It doesn't properly create a sorted list as I'm looping over two different lists.
 def stat_report(character_totals):
     sorted_dict = {}
     for letter in character_totals:
