@@ -5,6 +5,7 @@ def main():
     character_totals = character_count(text)
     print(total_words)
     print(character_totals)
+    stat_report(character_totals)
 
 def book(books_path):
     with open(books_path) as f:
@@ -28,5 +29,21 @@ def character_count(text):
             unique_dict[lowercase] += 1
     return unique_dict
 
+def sort_list(dict):
+    return dict[""]
+
+def stat_report(character_totals):
+    sorted_dict = {}
+    for letter in character_totals:
+        if letter.isalpha():
+            sorted_dict[letter] = character_totals[letter]
+    sorted_keys_by_value = sorted(sorted_dict.keys(), reverse=reversed, key=lambda k: sorted_dict[k])
+    
+    for key in sorted_keys_by_value: print(f"Key: '{key}', Value: {sorted_dict[key]}")
+    
+        
+
 
 main()
+
+
